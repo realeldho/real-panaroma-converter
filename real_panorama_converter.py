@@ -26,16 +26,24 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageTk
 
 APP_NAME = "Real Panorama Converter"
-APP_VERSION = "1.1.0"
+APP_VERSION = "1.2.0"
 
 # Exact release targets. Do not silently use a nearby version's metadata.
-# Resource-pack format references:
-# 1.8 = 1; 1.20/1.20.1 = 15; 1.21.11 = 75.0; 26.3 = 97.1.
+# Resource-pack formats are mapped per selected release.
+# Formats below 65 use pack_format; formats 65+ use min_format/max_format.
 MINECRAFT_TARGETS = {
     "Minecraft 26.3": {"kind": "modern", "min_format": [97, 1], "max_format": [97, 1]},
     "Minecraft 26.2": {"kind": "modern", "min_format": [88, 0], "max_format": [88, 0]},
     "Minecraft 26.1": {"kind": "modern", "min_format": [84, 0], "max_format": [84, 0]},
+    "Minecraft 1.21.11": {"kind": "modern", "min_format": [75, 0], "max_format": [75, 0]},
+    "Minecraft 1.21.9": {"kind": "modern", "min_format": [69, 0], "max_format": [69, 0]},
+    "Minecraft 1.21.6": {"kind": "legacy", "pack_format": 63},
+    "Minecraft 1.21.5": {"kind": "legacy", "pack_format": 55},
+    "Minecraft 1.21.4": {"kind": "legacy", "pack_format": 46},
+    "Minecraft 1.21.2": {"kind": "legacy", "pack_format": 42},
     "Minecraft 1.21": {"kind": "legacy", "pack_format": 34},
+    "Minecraft 1.20.5": {"kind": "legacy", "pack_format": 32},
+    "Minecraft 1.20.3": {"kind": "legacy", "pack_format": 22},
     "Minecraft 1.20": {"kind": "legacy", "pack_format": 15},
     "Minecraft 1.19": {"kind": "legacy", "pack_format": 9},
     "Minecraft 1.18": {"kind": "legacy", "pack_format": 8},
@@ -472,13 +480,13 @@ class PanoramaConverterApp:
 • If the image is not 2:1, the app warns you. Results may be distorted or incomplete.
 
 2. Choose the Minecraft version
-• Select one of the exact target labels shown in the version list:
-  Minecraft 26.3, 26.2, 26.1, 1.21, 1.20, 1.19, 1.18, 1.17,
+• Select one of the exact Java Edition targets:
+  26.3, 26.2, 26.1, 1.21.11, 1.21.9, 1.21.6, 1.21.5, 1.21.4,
+  1.21.2, 1.21, 1.20.5, 1.20.3, 1.20, 1.19, 1.18, 1.17,
   1.16, 1.15, 1.14, 1.13, 1.12 or 1.11.
-• The app writes the pack metadata configured for that target.
-• These are Java Edition targets. This app does not launch Minecraft or
-  independently verify compatibility in-game. Some major-version labels
-  cover multiple minor releases; verify the exact game release before publishing.
+• The app writes the resource-pack metadata configured for that target.
+• This app does not launch Minecraft or test compatibility in-game.
+  Test the generated pack in the exact game release before publishing.
 
 3. Resource pack icon (pack.png)
 • Optional. If you do not select one, the app creates a default icon.
