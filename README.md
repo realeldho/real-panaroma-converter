@@ -112,9 +112,9 @@ Do not commit `.venv`, `build`, `dist`, or generated panorama ZIP files. Keep th
 
 - `real_panorama_converter.py` — application source
 - `requirements.txt` — Python dependencies
+- `LICENSE` — MIT License
 - `.gitignore` — excludes local environments and build output
 - `.gitattributes` — consistent text-file handling
-- `COPYRIGHT_AND_LICENSE.md` — licensing checklist
 
 ## License
 
