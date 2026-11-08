@@ -118,4 +118,4 @@ Do not commit `.venv`, `build`, `dist`, or generated panorama ZIP files. Keep th
 
 ## License
 
-See `COPYRIGHT_AND_LICENSE.md`. A license is intentionally not included until the source-code ownership and any upstream-code permissions are confirmed.
+This project is licensed under the **MIT License**. See the [`LICENSE`](LICENSE) file for details.
