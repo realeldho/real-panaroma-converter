@@ -21,7 +21,7 @@ Real Panorama Converter takes a 360-degree equirectangular image, projects it in
 
 The current application version lists:
 
-`26.3`, `26.2`, `26.1`, `1.21`, `1.20`, `1.19`, `1.18`, `1.17`, `1.16`, `1.15`, `1.14`, `1.13`, `1.12`, `1.11`.
+`1.11`, `1.12`, `1.13`, `1.14`, `1.15`, `1.16`, `1.17`, `1.18`, `1.19`, `1.20`, `1.20.3`, `1.20.5`, `1.21`, `1.21.2`, `1.21.4`, `1.21.5`, `1.21.6`, `1.21.9`, `1.21.11`, `26.1`, `26.2`, `26.3`
 
 The version-to-pack-metadata mapping is configured in `MINECRAFT_TARGETS` in `real_panorama_converter.py`. A major-version label does not guarantee that every minor release in that family uses the same resource-pack format. The application does not launch Minecraft or test compatibility in-game. Verify and test each exact Minecraft release before making compatibility claims.
 
